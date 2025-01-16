@@ -97,7 +97,9 @@
                                             <h2 class="text-xl font-semibold text-black dark:text-white">Documentation</h2>
 
                                             <p class="mt-4 text-sm/relaxed">
-                                                Laravel has wonderful documentation covering every aspect of the framework. Whether you are a newcomer or have prior experience with Laravel, we recommend reading our documentation from beginning to end.
+                                                Laravel has wonderful documentation covering every aspect of the framework.
+                                                 Whether you are a newcomer or have prior experience with Laravel, we recommend reading 
+                                                 our documentation from beginning to end.
                                             </p>
                                         </div>
                                     </div>
@@ -115,10 +117,12 @@
                                 </div>
 
                                 <div class="pt-3 sm:pt-5">
-                                    <h2 class="text-xl font-semibold text-black dark:text-white">Laracasts</h2>
+                                    <h2 class="text-xl font-semibold text-yellow dark:text-yellow bg-black">welcome to laravel </h2>
 
-                                    <p class="mt-4 text-sm/relaxed">
-                                        Laracasts offers thousands of video tutorials on Laravel, PHP, and JavaScript development. Check them out, see for yourself, and massively level up your development skills in the process.
+                                    <p class="mt-4 text-sm/relaxed text-green dark:text-white/70 dark:text-yellow/700">
+                                        Laracasts offers thousands of video tutorials on Laravel, PHP, and JavaScript
+                                         development. Check them out, see for yourself, and massively level up your development
+                                          skills in the process.
                                     </p>
                                 </div>
 
