@@ -45,14 +45,14 @@ Route::get('add/{a}/{b}',function($a,$b){
 });
 
 //For loop
-Route::get('/{n}',function($n){
-    $result=1;
- for( $i=1;$i<=$n;$i++){
+// Route::get('/{n}',function($n){
+//     $result=1;
+//  for( $i=1;$i<=$n;$i++){
 
-        $result *= $i;
- }
- return $result;
-});
+//         $result *= $i;
+//  }
+//  return $result;
+// });
 
 
 Route::get('/data',function(){
@@ -87,4 +87,18 @@ Route::get('/num/{number}', function($number) {
 
         return "<p style=color:red>You have failed</p>";
     }
+});
+
+Route::get('test',function(){
+    return view('test');
+});
+
+Route::view('satya','satya');
+
+Route::get('satya',function(){
+    return view::mark('test');
+});
+
+Route::get('satya',function(){
+    return view('satya')->with('name','Ashish');
 });
