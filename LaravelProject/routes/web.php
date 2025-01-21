@@ -65,3 +65,26 @@ Route::get('/data1',function(){
     return $data1['Age'];
     
 });
+
+//Creata a route that accepts a route parameter as a  number which depicts marks. Consider certain 
+//condition that will print the message "You got --grade and should print in color;
+
+Route::get('/num/{number}', function($number) {
+    if ($number >= 90) {
+
+        return "<p style=color:green>You achieve a A grade<p/>";
+
+    } elseif ($number >= 80 && $number < 90) {
+        return "B grade";
+
+    } elseif ($number >= 70 && $number < 80) {
+        return "C grade";
+
+    } elseif ($number >= 60 && $number < 70) {
+        return "D grade";
+
+    } else {
+
+        return "<p style=color:red>You have failed</p>";
+    }
+});
