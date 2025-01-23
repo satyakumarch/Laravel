@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+
 // Route::get('wel', function () {
 //     return "welcome to larval php";
 // });
@@ -55,50 +56,62 @@ Route::get('add/{a}/{b}',function($a,$b){
 // });
 
 
-Route::get('/data',function(){
+// Route::get('/data',function(){
     
-    return  ['Niranj','bisha','satya'];
-});
+//     return  ['Niranj','bisha','satya'];
+// });
 
-Route::get('/data1',function(){
-    $data1=['Name'=>'Niraj','Age'=>23,'subject'=>'math','Phone'=>776476547];
-    return $data1['Age'];
+// Route::get('/data1',function(){
+//     $data1=['Name'=>'Niraj','Age'=>23,'subject'=>'math','Phone'=>776476547];
+//     return $data1['Age'];
     
-});
+// });
 
-//Creata a route that accepts a route parameter as a  number which depicts marks. Consider certain 
-//condition that will print the message "You got --grade and should print in color;
+// //Creata a route that accepts a route parameter as a  number which depicts marks. Consider certain 
+// //condition that will print the message "You got --grade and should print in color;
 
-Route::get('/num/{number}', function($number) {
-    if ($number >= 90) {
+// Route::get('/num/{number}', function($number) {
+//     if ($number >= 90) {
 
-        return "<p style=color:green>You achieve a A grade<p/>";
+//         return "<p style=color:green>You achieve a A grade<p/>";
 
-    } elseif ($number >= 80 && $number < 90) {
-        return "B grade";
+//     } elseif ($number >= 80 && $number < 90) {
+//         return "B grade";
 
-    } elseif ($number >= 70 && $number < 80) {
-        return "C grade";
+//     } elseif ($number >= 70 && $number < 80) {
+//         return "<p style =color:blue>C grade</p>";
 
-    } elseif ($number >= 60 && $number < 70) {
-        return "D grade";
+//     } elseif ($number >= 60 && $number < 70) {
+//         return "<p  style=color:yellow> you can achieve D grade</p>";
 
-    } else {
+//     } else {
 
-        return "<p style=color:red>You have failed</p>";
-    }
-});
+//         return "<p style=color:red>You have failed</p>";
+//     }
+// });
+
+// Route::get('test',function(){
+//     return view('test');
+// });
+
+// Route::view('satya','satya');
+
+// Route::get('satya',function(){
+//     return view::mark('test');
+// });
+
+// Route::get('satya',function(){
+//     return view('satya')->with('name','Ashish');
+// });
+
+// Route::get('satya',function(){
+//     return view('satya',['name'=>'manoj']);
+// });
 
 Route::get('test',function(){
-    return view('test');
+    return view('test',['name'=>'Ashish','score'=>34]);
 });
 
-Route::view('satya','satya');
-
-Route::get('satya',function(){
-    return view::mark('test');
-});
-
-Route::get('satya',function(){
-    return view('satya')->with('name','Ashish');
+Route::get('test1',function(){
+    return view('test1')->with('name','manoj');
 });

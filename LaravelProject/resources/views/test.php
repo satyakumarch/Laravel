@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -11,4 +11,7 @@
     <p>Test Page</p>
     
 </body>
-</html>
+</html> -->
+
+<?php
+echo "you name is $name and your score is $score";
