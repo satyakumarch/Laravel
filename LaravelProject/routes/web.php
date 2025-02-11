@@ -1,6 +1,6 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+// use Illuminate\Support\Facades\Route;
 
 
 // Route::get('wel', function () {
@@ -37,13 +37,13 @@ use Illuminate\Support\Facades\Route;
 // });
 
 
-Route::get('add/{a}/{b}',function($a,$b){
-    $add =$a+$b;
-    $sub=$a-$b;
-    $mul=$a*$b;
-    $div=$a/$b;
-    return [$add,$sub,$mul,$div];
-});
+// Route::get('add/{a}/{b}',function($a,$b){
+//     $add =$a+$b;
+//     $sub=$a-$b;
+//     $mul=$a*$b;
+//     $div=$a/$b;
+//     return [$add,$sub,$mul,$div];
+// });
 
 //For loop
 // Route::get('/{n}',function($n){
@@ -70,6 +70,18 @@ Route::get('add/{a}/{b}',function($a,$b){
 // //Creata a route that accepts a route parameter as a  number which depicts marks. Consider certain 
 // //condition that will print the message "You got --grade and should print in color;
 
+
+
+
+
+
+
+
+
+
+
+
+
 // Route::get('/num/{number}', function($number) {
 //     if ($number >= 90) {
 
@@ -90,6 +102,21 @@ Route::get('add/{a}/{b}',function($a,$b){
 //     }
 // });
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Route::get('test',function(){
 //     return view('test');
 // });
@@ -108,10 +135,127 @@ Route::get('add/{a}/{b}',function($a,$b){
 //     return view('satya',['name'=>'manoj']);
 // });
 
-Route::get('test',function(){
-    return view('test',['name'=>'Ashish','score'=>34]);
+// Route::get('test',function(){
+//     return view('test',['name'=>'Ashish','score'=>34]);
+// });
+
+// Route::get('test1',function(){
+//     return view('test1')->with('name','manoj')->with('score','54');
+// });
+
+///creata a route that accept two parameter as empname and empsalary an this data  is
+// share the data with the view.The view must print two variable $empname and $empsalary whose
+// value will be fetched dynamically from the route parameter in the route in web.php 
+
+//first way
+// Route::get('test1/{empname}/{empsalary}',function($empname,$empsalary){
+//     return view('test1',['empname'=>$empname,'empsalary'=>$empsalary]);
+// });
+
+//2nd way
+// Route::get('test1/{empname}/{empsalary}',function($empname,$empsalary){
+//     return view('test1')->with('empname',$empname)->with('empsalary',$empsalary);
+// });
+
+//3rd way
+// Route::get('test1/{empname}/{empsalary}/{empaddress}',function($empname,$empsalary,$empaddress){
+//     return view ('test1',compact('empname','empsalary','empaddress'));
+// });
+
+// Route::get('/name',function($name){
+//     $name=['mohan','rohan','arjun','karana','krishna'];
+
+//     for( $i=0;$i<=$name;$i++){
+//         if($i=$name["$i"]){
+//         echo " the name is $name";
+//         }else{
+//             echo  "not data is present";
+//         }
+//     }
+// });
+// Route::get('stdents/',function(){
+//     $student=[
+//         'mohan',
+//         'rohan',
+//         'sita',
+//         'karan',
+//         'arjun'
+
+//     ];
+//     foreach($student as $student){
+//         if($name==$student){
+//             $message=true;
+//             break;
+//         }
+//     }
+//     return view('student',['student',=>$student,'$message'=>$message,'$name',=>$name])
+    
+    
+// });
+
+/////////////////////////////////////////////////////////////
+// Route::get('students/{name}', function ($name) {
+//     $students = [
+//         'mohan',
+//         'rohan',
+//         'sita',
+//         'karan',
+//         'arjun'
+//     ];
+
+//     $message = false;
+//     foreach ($students as $student) {
+//         if ($name == $student) {
+//             $message = true;
+//             break;
+//         }
+//     }
+
+//     return view('student', [
+//         'students' => $students,
+//         'message' => $message,
+//         'name' => $name
+//     ]);
+// });
+
+
+
+
+///using where condtion'
+// Route::get('/{mob}', function ($mob) {
+//     return view("new", ["mob" => $mob]);
+// })->where('mob', '[0-9]+');
+
+
+// Route::get('add/{a}/{b}',function($a,$b){
+//     $add =$a+$b;
+//     return [$add];
+// });
+
+// Route::get('/',function(){
+//     return view('paramter')
+// })
+
+
+use App\Http\Controllers\NewController;
+// use Illuminate\Support\Facades\Route;
+
+// Route::get('/NewController',[NewController::class,'myFunction']);
+//  Route::get('/',function(){
+//     return view('$name');
+//  });
+
+
+
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
+
+Route::get('/multiplication', function () {
+    return view('multiplication');
 });
 
-Route::get('test1',function(){
-    return view('test1')->with('name','manoj');
+Route::post('/multiplication', function (Request $request) {
+    $num = intval($request->input('number')); // Get the input and convert it to an integer
+    return view('multiplication', compact('num'));
 });
+

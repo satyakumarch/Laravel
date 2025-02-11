@@ -20,9 +20,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
-        // view()->share('name','Jai sri ram');
-        View::share('point',0);
-        View::share('$name','ANil');
-    }
+        // Sharing data across all views
+        View::share('point', 0);
+        View::share('name', 'Anil');
+        View::share('name2', 'Shuvam');
+        View::share('name', 'Aryan'); // This will override 'Anil'
+    } // <-- Corrected closing of the boot() function
 }
