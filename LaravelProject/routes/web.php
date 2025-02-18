@@ -259,3 +259,5 @@ Route::post('/multiplication', function (Request $request) {
     return view('multiplication', compact('num'));
 });
 
+Route::view('newurl','urlpage');
+Route::view('forever','prevurl');
