@@ -259,5 +259,24 @@ Route::post('/multiplication', function (Request $request) {
     return view('multiplication', compact('num'));
 });
 
-Route::view('newurl','urlpage');
-Route::view('forever','prevurl');
+
+
+
+use App\Http\Controllers\StudentController;
+
+Route::prefix('student')->group(function () {
+    Route::get('/', [StudentController::class, 'index']);
+    Route::get('/{id}', [StudentController::class, 'show']);
+});
+// Route::view('newurl','urlpage');
+// Route::view('forever','prevurl');
+
+// Route::view('newurl/a/b/c/d/e/f','urlpage')->name('nu');
+// Route
+
+
+Route::group(['prefix' => 'products'], function () {
+    Route::get('/', [ProductController::class, 'index'])->name('products.index'); // List View
+    Route::get('/{id}', [ProductController::class, 'show'])->name('products.show'); // Single Product View
+});
+
