@@ -292,3 +292,8 @@ Route::get('/about', function () {
 Route::get('/contact', function () {
     return view('contact');
 });
+
+use App\Http\Controllers\FormController;
+
+Route::get('/form', [FormController::class, 'showForm'])->name('form.show');
+Route::post('/submit-form', [FormController::class, 'handleForm'])->name('form.submit');
